@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { Tag } from '@/app/_components/tag';
 import { Shop } from '@/app/_types/shop';
 
@@ -16,9 +18,15 @@ export const ShopCard: React.FC<Props> = ({ shop }) => {
           <></>
         )}
       </div>
-      <div className='my-2 flex space-x-4'>
-        <div className='aspect-square w-1/2 bg-mauve-4 ' />
-        <div className='aspect-square w-1/2 bg-mauve-4 ' />
+      <div className='my-2 flex items-center justify-center space-x-4'>
+        {`/${shop.id}.png` && (
+          <Image
+            src={`/${shop.id}.png`}
+            alt={shop.shop_name}
+            height={200}
+            width={320}
+          />
+        )}
       </div>
       <div className='flex justify-end'>
         <Tag type='genre' text={shop.food_tag} />
