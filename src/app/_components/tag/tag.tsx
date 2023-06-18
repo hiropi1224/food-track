@@ -7,7 +7,7 @@ type Props = {
 };
 
 const tag = tv({
-  base: 'flex w-fit items-center justify-center rounded-lg px-2 text-center text-sm',
+  base: 'flex w-fit items-center justify-center rounded-lg px-2 text-center text-xs sm:text-sm',
 });
 
 export const Tag: FC<Props> = ({ type, text }) => {

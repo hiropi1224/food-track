@@ -11,7 +11,7 @@ export const ShopCard: React.FC<Props> = ({ shop }) => {
   return (
     <div className='w-full py-2'>
       <div className='sm:flex sm:justify-between'>
-        <p className='text-xl font-bold'>{shop.shop_name}</p>
+        <p className='font-bold sm:text-xl'>{shop.shop_name}</p>
         {shop.is_cashless ? (
           <Tag type='cashless' text='キャッシュレス対応' />
         ) : (
