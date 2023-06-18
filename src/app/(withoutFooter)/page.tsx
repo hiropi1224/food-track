@@ -1,3 +1,4 @@
+import { ShopCard } from '@/app/_components/shop-card/shop-card';
 import { Database } from '@/app/_types/database.types';
 type Shop = Database['public']['Tables']['shop']['Row'];
 
@@ -18,13 +19,13 @@ export default async function Top() {
   const shopList = await fetchShopList();
 
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+    <main className='flex min-h-screen flex-col items-center'>
       {shopList.map((shop) => (
-        <div key={shop.id}>
-          <p>{shop.shop_name}</p>
-          <p>{shop.food_tag}</p>
-          <p>{shop.is_cashless ? 'キャッシュレス対応' : ''}</p>
-          <p>{shop.created_at}</p>
+        <div
+          key={shop.id}
+          className='w-full border-b border-mauve-4 px-4 pb-2 sm:px-20'
+        >
+          <ShopCard shop={shop} />
         </div>
       ))}
     </main>
