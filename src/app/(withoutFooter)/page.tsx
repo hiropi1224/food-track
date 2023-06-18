@@ -1,6 +1,8 @@
+import Link from 'next/link';
+
 import { ShopCard } from '@/app/_components/shop-card/shop-card';
-import { Database } from '@/app/_types/database.types';
-type Shop = Database['public']['Tables']['shop']['Row'];
+import { Shop } from '@/app/_types/shop';
+import { sortByShopList } from '@/app/utils';
 
 const fetchShopList = async () => {
   const res = await fetch(`${process.env.url}/rest/v1/shop?select=*`, {
@@ -8,6 +10,7 @@ const fetchShopList = async () => {
       apikey: process.env.apikey as string,
       Authorization: process.env.authorization as string,
     }),
+    next: { revalidate: 86400 },
   });
 
   const shopList: Shop[] = await res.json();
@@ -17,15 +20,18 @@ const fetchShopList = async () => {
 
 export default async function Top() {
   const shopList = await fetchShopList();
+  const sortedList = sortByShopList(shopList);
 
   return (
     <main className='flex min-h-screen flex-col items-center'>
-      {shopList.map((shop) => (
+      {sortedList.map((shop) => (
         <div
           key={shop.id}
           className='w-full border-b border-mauve-4 px-4 pb-2 sm:px-20'
         >
-          <ShopCard shop={shop} />
+          <Link href={`/${shop.id}`}>
+            <ShopCard shop={shop} />
+          </Link>
         </div>
       ))}
     </main>
