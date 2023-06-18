@@ -1,7 +1,5 @@
 import { Tag } from '@/app/_components/tag';
-import { Database } from '@/app/_types/database.types';
-
-type Shop = Database['public']['Tables']['shop']['Row'];
+import { Shop } from '@/app/_types/shop';
 
 type Props = {
   shop: Shop;
@@ -9,7 +7,7 @@ type Props = {
 
 export const ShopCard: React.FC<Props> = ({ shop }) => {
   return (
-    <div className='w-full'>
+    <div className='w-full py-2'>
       <div className='sm:flex sm:justify-between'>
         <p className='text-xl font-bold'>{shop.shop_name}</p>
         {shop.is_cashless ? (
