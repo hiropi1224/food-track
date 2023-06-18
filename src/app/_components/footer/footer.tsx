@@ -1,4 +1,5 @@
-import { IconStar, IconShare2, IconMapSearch } from '@tabler/icons-react';
+import { IconMapSearch, IconArrowBackUp } from '@tabler/icons-react';
+import Link from 'next/link';
 import { tv } from 'tailwind-variants';
 
 const footer = tv({
@@ -12,23 +13,38 @@ const footer = tv({
 
 const { base, nav, text, iconArea } = footer();
 
-export const Footer: React.FC = () => {
+type Props = {
+  lat: string;
+  lng: string;
+  dayOfWeek: string;
+};
+
+export const Footer: React.FC<Props> = ({ lat, lng, dayOfWeek }) => {
   return (
     <footer className={base()}>
       <nav className={nav()}>
-        <button className={iconArea()}>
+        {/* <button className={iconArea()}>
           <IconStar size={24} />
           <p className={text()}>お気に入り</p>
-        </button>
+        </button> */}
 
-        <button className={iconArea()}>
+        <Link href={`/${dayOfWeek}`} className={iconArea()}>
+          <IconArrowBackUp size={24} />
+          <p className={text()}>戻る</p>
+        </Link>
+        {/* <button className={iconArea()}>
           <IconShare2 size={24} />
           <p className={text()}>共有</p>
-        </button>
-        <button className={iconArea()}>
+        </button> */}
+        <Link
+          href={`https://maps.google.com/maps?q=${lat},${lng}`}
+          target='_blank'
+          rel='noopener noreferrer'
+          className={iconArea()}
+        >
           <IconMapSearch size={24} />
           <p className={text()}>Mapを開く</p>
-        </button>
+        </Link>
       </nav>
     </footer>
   );
