@@ -13,20 +13,18 @@ export const ShopCard: React.FC<Props> = ({ shop }) => {
       <div className='sm:flex sm:justify-between'>
         <p className='text-xl font-bold'>{shop.shop_name}</p>
         {shop.is_cashless ? (
-          <Tag type='cashless' text='キャッシュレス決済対応' />
+          <Tag type='cashless' text='キャッシュレス対応' />
         ) : (
           <></>
         )}
       </div>
       <div className='my-2 flex items-center justify-center space-x-4'>
-        {`/${shop.id}.png` && (
-          <Image
-            src={`/${shop.id}.png`}
-            alt={shop.shop_name}
-            height={200}
-            width={320}
-          />
-        )}
+        <Image
+          src={`/${shop.id}.png`}
+          alt={shop.shop_name}
+          height={200}
+          width={320}
+        />
       </div>
       <div className='flex justify-end'>
         <Tag type='genre' text={shop.food_tag} />
