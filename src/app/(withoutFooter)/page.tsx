@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { ShopCard } from '@/app/_components/shop-card/shop-card';
 import { Shop } from '@/app/_types/shop';
-import { sortByShopList } from '@/app/utils';
+import { sortByShopList } from '@/app/_utils';
 
 const fetchShopList = async () => {
   const res = await fetch(`${process.env.url}/rest/v1/shop?select=*`, {
