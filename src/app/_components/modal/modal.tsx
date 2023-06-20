@@ -3,7 +3,14 @@
 import { useRouter } from 'next/navigation';
 import { useCallback, useRef, useEffect } from 'react';
 
-export const Modal: React.FC<React.PropsWithChildren> = ({ children }) => {
+type Props = {
+  isOpen: boolean;
+};
+
+export const Modal: React.FC<Props & React.PropsWithChildren> = ({
+  children,
+  isOpen = true,
+}) => {
   const overlay = useRef();
   const wrapper = useRef();
   const router = useRouter();
@@ -35,19 +42,21 @@ export const Modal: React.FC<React.PropsWithChildren> = ({ children }) => {
   }, [onKeyDown]);
 
   return (
-    <div
-      // @ts-ignore
-      ref={overlay}
-      className='bg-black/60 fixed inset-0 z-10 mx-auto'
-      onClick={onClick}
-    >
+    isOpen && (
       <div
         // @ts-ignore
-        ref={wrapper}
-        className='absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 p-6 sm:w-10/12 md:w-8/12 lg:w-1/2'
+        ref={overlay}
+        className='fixed inset-0 z-10 mx-auto bg-mauve-11/60'
+        onClick={onClick}
       >
-        {children}
+        <div
+          // @ts-ignore
+          ref={wrapper}
+          className='absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 p-6 sm:w-10/12 md:w-8/12 lg:w-1/2'
+        >
+          {children}
+        </div>
       </div>
-    </div>
+    )
   );
 };

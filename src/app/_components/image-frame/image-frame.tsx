@@ -1,15 +1,15 @@
 import Image from 'next/image';
 
 type Props = {
-  shopId: string;
+  photoId: string;
 };
 
-export const ImageFrame: React.FC<Props> = ({ shopId }) => {
+export const ImageFrame: React.FC<Props> = ({ photoId }) => {
   return (
     <>
       <Image
         alt=''
-        src={`/${shopId}.png`}
+        src={`/${photoId}.png`}
         height={600}
         width={600}
         className='col-span-2 aspect-square w-full object-cover'
