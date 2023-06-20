@@ -1,4 +1,4 @@
-import { fetchShopListForDayOfWeek } from '@/app/_components/_actions/fetch-shop-list';
+import { fetchShopListForDayOfWeek } from '@/app/_actions/fetch-shop-list';
 import { ShopList } from '@/app/_components/shop-list';
 
 export default async function DayOfWeek({

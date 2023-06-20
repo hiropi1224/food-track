@@ -18,6 +18,7 @@ export const Primary: Story = {
         id: '37b6b7be-3d0b-4021-8f5f-04064f33dbc6',
         created_at: '2023-06-17T08:00:25.965784+00:00',
         updated_at: null,
+        shop_id: 1,
         shop_name: 'Twenty’s TacoRice 20’s',
         business_day: '3',
         shop_image: null,
