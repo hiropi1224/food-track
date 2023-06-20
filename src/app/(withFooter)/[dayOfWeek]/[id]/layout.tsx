@@ -1,4 +1,4 @@
-import { fetchShop } from '@/app/_components/_actions/fetch-shop';
+import { fetchShop } from '@/app/_actions/fetch-shop';
 import { Footer } from '@/app/_components/footer';
 import { ShopDetail } from '@/app/_components/shop-detail';
 

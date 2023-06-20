@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { fetchShopId } from '@/app/_components/_actions/fetch-shop-list';
+import { fetchShopId } from '@/app/_actions/fetch-shop-list';
 
 export default async function Top() {
   const ids = await fetchShopId();

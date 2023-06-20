@@ -1,4 +1,4 @@
-import { fetchShop } from '@/app/_components/_actions/fetch-shop';
+import { fetchShop } from '@/app/_actions/fetch-shop';
 import { ClientModal } from '@/app/_components/client-modal';
 
 export default async function PhotoModal({
