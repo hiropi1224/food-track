@@ -14,7 +14,7 @@ export const ClientModal: React.FC<Props> = ({ photoId, dayOfWeek }) => {
   const { isOpen, setIsOpen } = useModal();
 
   return (
-    <Modal isOpen={isOpen}>
+    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <ImageFrame photoId={photoId} />
       <div className='flex justify-center bg-mauve-2'>
         <Link

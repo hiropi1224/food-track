@@ -5,34 +5,43 @@ import { useCallback, useRef, useEffect } from 'react';
 
 type Props = {
   isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const Modal: React.FC<Props & React.PropsWithChildren> = ({
   children,
   isOpen = true,
+  setIsOpen,
 }) => {
   const overlay = useRef();
   const wrapper = useRef();
   const router = useRouter();
 
   const onDismiss = useCallback(() => {
+    setIsOpen(false);
     router.back();
-  }, [router]);
+  }, [router, setIsOpen]);
 
   const onClick = useCallback(
     (e: any) => {
       if (e.target === overlay.current || e.target === wrapper.current) {
-        if (onDismiss) onDismiss();
+        if (onDismiss) {
+          setIsOpen(false);
+          onDismiss();
+        }
       }
     },
-    [onDismiss, overlay, wrapper]
+    [onDismiss, overlay, wrapper, setIsOpen]
   );
 
   const onKeyDown = useCallback(
     (e: any) => {
-      if (e.key === 'Escape') onDismiss();
+      if (e.key === 'Escape') {
+        setIsOpen(false);
+        onDismiss();
+      }
     },
-    [onDismiss]
+    [onDismiss, setIsOpen]
   );
 
   useEffect(() => {
