@@ -1,3 +1,3 @@
 export default async function DayOfWeek() {
-  return <main className=''></main>;
+  return <main className='mb-12'></main>;
 }

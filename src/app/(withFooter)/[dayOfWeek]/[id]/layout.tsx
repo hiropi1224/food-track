@@ -1,3 +1,4 @@
+import { fetchFoodList } from '@/app/_actions/fetch-menu';
 import { fetchShop } from '@/app/_actions/fetch-shop';
 import { Footer } from '@/app/_components/footer';
 import { ShopDetail } from '@/app/_components/shop-detail';
@@ -10,10 +11,11 @@ export default async function Layout({
   params: { id: string };
 }) {
   const shop = await fetchShop(params.id);
+  const foodList = await fetchFoodList(params.id);
 
   return (
     <main>
-      <ShopDetail shop={shop} />
+      <ShopDetail shop={shop} foodList={foodList} />
       {children}
       <Footer lat={shop.lat} lng={shop.lng} dayOfWeek={shop.business_day} />
     </main>

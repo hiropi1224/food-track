@@ -1,13 +1,17 @@
 import Image from 'next/image';
 
+import { FoodMenu } from '@/app/_components/food-menu';
+import { SkeletonMenu } from '@/app/_components/food-menu/food-menu';
 import { Tag } from '@/app/_components/tag';
+import { Food } from '@/app/_types/food';
 import { Shop } from '@/app/_types/shop';
 
 type Props = {
   shop: Shop;
+  foodList: Food[];
 };
 
-export const ShopDetail: React.FC<Props> = ({ shop }) => {
+export const ShopDetail: React.FC<Props> = ({ shop, foodList }) => {
   return (
     <div className='w-full py-2'>
       <div className='flex items-center justify-center space-x-4'>
@@ -32,7 +36,18 @@ export const ShopDetail: React.FC<Props> = ({ shop }) => {
       </div>
       <div className='my-2 border-y border-mauve-4'>
         <p>Menu</p>
-        <p className='p-2'>coming soon</p>
+        {foodList.length != 0 ? (
+          foodList.map((food) => (
+            <FoodMenu
+              key={food.id}
+              id={food.id}
+              foodName={food.name}
+              price={food.price}
+            />
+          ))
+        ) : (
+          <SkeletonMenu />
+        )}
       </div>
     </div>
   );
