@@ -12,7 +12,7 @@ export const ImageFrame: React.FC<Props> = ({ photoId }) => {
         src={`/${photoId}.png`}
         height={600}
         width={600}
-        className='col-span-2 aspect-square w-full object-cover'
+        className='col-span-2 w-full object-cover'
       />
     </>
   );
