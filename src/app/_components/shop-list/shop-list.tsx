@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
 import { ShopCard } from '@/app/_components/shop-card';
-import { Tabs } from '@/app/_components/tabs';
 import { Shop } from '@/app/_types/shop';
 
 type Props = {
@@ -12,7 +11,6 @@ type Props = {
 export const ShopList: React.FC<Props> = ({ shopList, dayOfWeek }) => {
   return (
     <>
-      <Tabs tabs={tabs} />
       {shopList.map((shop) => (
         <div
           key={shop.id}
@@ -26,11 +24,3 @@ export const ShopList: React.FC<Props> = ({ shopList, dayOfWeek }) => {
     </>
   );
 };
-
-const tabs = [
-  { path: '/1', tabText: 'Mon' },
-  { path: '/2', tabText: 'Tue' },
-  { path: '/3', tabText: 'Wed' },
-  { path: '/4', tabText: 'Thu' },
-  { path: '/5', tabText: 'Fri' },
-];
