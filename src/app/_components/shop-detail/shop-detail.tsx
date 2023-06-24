@@ -16,11 +16,11 @@ export const ShopDetail: React.FC<Props> = ({ shop, foodList }) => {
     <div className='w-full py-2'>
       <div className='flex items-center justify-center space-x-4'>
         <Image
-          className=''
           src={`/shop/${shop.id}.png`}
           alt={shop.shop_name}
-          height={200}
+          height={320}
           width={320}
+          className='aspect-square'
         />
       </div>
       <div className='my-2'>

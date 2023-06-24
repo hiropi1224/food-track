@@ -20,6 +20,7 @@ export const FoodMenu: React.FC<Props> = ({ foodName, price, id }) => {
           alt=''
           height={isImagePath ? 160 : 100}
           width={isImagePath ? 160 : 100}
+          className='aspect-square'
         />
       </div>
       <div className='flex flex-col justify-between px-2 py-4'>
