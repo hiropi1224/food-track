@@ -3,20 +3,17 @@ import { fetchShop } from '@/app/_actions/fetch-shop';
 import { Footer } from '@/app/_components/footer';
 import { ShopDetail } from '@/app/_components/shop-detail';
 
-export default async function Layout({
-  children,
+export default async function DayOfWeek({
   params,
 }: {
-  children: React.ReactNode;
   params: { id: string };
 }) {
   const shop = await fetchShop(params.id);
   const foodList = await fetchFoodList(params.id);
 
   return (
-    <main>
+    <main className='mb-12'>
       <ShopDetail shop={shop} foodList={foodList} />
-      {children}
       <Footer lat={shop.lat} lng={shop.lng} dayOfWeek={shop.business_day} />
     </main>
   );
