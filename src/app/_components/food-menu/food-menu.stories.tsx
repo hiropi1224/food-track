@@ -12,5 +12,8 @@ export default meta;
 type Story = StoryObj<typeof FoodMenu>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    foodName: 'foodName',
+    price: '1000',
+  },
 };

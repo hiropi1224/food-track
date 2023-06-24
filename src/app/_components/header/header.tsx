@@ -4,7 +4,7 @@ import { FC } from 'react';
 
 export const Header: FC = () => {
   return (
-    <header className='border-b-2 border-mauve-4'>
+    <header className='mb-2 border-b-2 border-mauve-4'>
       <Link href='/'>
         <div className='flex items-center gap-2'>
           <IconTruckDelivery size={36} />

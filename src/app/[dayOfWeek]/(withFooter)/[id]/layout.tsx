@@ -1,6 +1,5 @@
 import { fetchShop } from '@/app/_actions/fetch-shop';
 import { Footer } from '@/app/_components/footer';
-import { ShopDetail } from '@/app/_components/shop-detail';
 
 export default async function Layout({
   children,
@@ -13,9 +12,13 @@ export default async function Layout({
 
   return (
     <main>
-      <ShopDetail shop={shop} />
       {children}
-      <Footer lat={shop.lat} lng={shop.lng} dayOfWeek={shop.business_day} />
+      <Footer
+        shopId={shop.id}
+        lat={shop.lat}
+        lng={shop.lng}
+        dayOfWeek={shop.business_day}
+      />
     </main>
   );
 }

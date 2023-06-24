@@ -21,8 +21,10 @@ export default function RootLayout({
     <html lang='ja'>
       <body className={inter.className}>
         <Header />
-        {children}
-        {modal}
+        <main className='m-auto min-h-screen max-w-3xl'>
+          {children}
+          {modal}
+        </main>
       </body>
     </html>
   );

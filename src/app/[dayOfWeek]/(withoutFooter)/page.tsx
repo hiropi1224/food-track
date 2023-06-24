@@ -1,5 +1,7 @@
 import { fetchShopListForDayOfWeek } from '@/app/_actions/fetch-shop-list';
 import { ShopList } from '@/app/_components/shop-list';
+import { Tabs } from '@/app/_components/tabs';
+import { tabs } from '@/app/_const/tabs';
 
 export default async function DayOfWeek({
   params,
@@ -10,6 +12,7 @@ export default async function DayOfWeek({
 
   return (
     <main className='flex min-h-screen flex-col items-center'>
+      <Tabs tabs={tabs} />
       <ShopList shopList={shopList} dayOfWeek={params.dayOfWeek} />
     </main>
   );

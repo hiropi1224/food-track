@@ -20,10 +20,11 @@ export const ShopCard: React.FC<Props> = ({ shop }) => {
       </div>
       <div className='my-2 flex items-center justify-center space-x-4'>
         <Image
-          src={`/${shop.id}.png`}
+          src={`/shop/${shop.id}.png`}
           alt={shop.shop_name}
-          height={200}
+          height={320}
           width={320}
+          className='aspect-square'
         />
       </div>
       <div className='flex justify-end'>
