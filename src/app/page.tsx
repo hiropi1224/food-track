@@ -11,7 +11,13 @@ export default async function Top() {
       <div className='grid  gap-4 sm:grid-cols-2'>
         {ids.map((id) => (
           <Link key={id.id} href={`/photos/${id.id}`}>
-            <Image src={`/shop/${id.id}.png`} alt='' height={200} width={320} />
+            <Image
+              src={`/shop/${id.id}.png`}
+              alt=''
+              height={320}
+              width={320}
+              className='aspect-square'
+            />
           </Link>
         ))}
       </div>
