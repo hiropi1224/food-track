@@ -1,6 +1,5 @@
-import fs from 'fs';
-
 import Image from 'next/image';
+
 type Props = {
   foodName: string;
   price: string;
@@ -8,18 +7,16 @@ type Props = {
 };
 
 export const FoodMenu: React.FC<Props> = ({ foodName, price, id }) => {
-  const imagePath = `/food/${id}.png`;
-  const fallbackImagePath = '/food/noimage.png';
-  const isImagePath = fs.existsSync(`public${imagePath}`);
+  const fallbackImagePath = '/noimage.png';
 
   return (
     <div className='flex gap-2 border-b border-mauve-7 py-2'>
       <div className='flex h-40 w-40 items-center justify-center'>
         <Image
-          src={isImagePath ? imagePath : fallbackImagePath}
-          alt=''
-          height={isImagePath ? 160 : 100}
-          width={isImagePath ? 160 : 100}
+          src={fallbackImagePath}
+          alt={id}
+          height={100}
+          width={100}
           className='aspect-square'
         />
       </div>
