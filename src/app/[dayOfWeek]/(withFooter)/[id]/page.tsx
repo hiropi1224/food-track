@@ -14,7 +14,12 @@ export default async function DayOfWeek({
   return (
     <main className='mb-12'>
       <ShopDetail shop={shop} foodList={foodList} />
-      <Footer lat={shop.lat} lng={shop.lng} dayOfWeek={shop.business_day} />
+      <Footer
+        shopId={shop.id}
+        lat={shop.lat}
+        lng={shop.lng}
+        dayOfWeek={shop.business_day}
+      />
     </main>
   );
 }

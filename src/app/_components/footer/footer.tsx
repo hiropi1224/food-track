@@ -1,4 +1,8 @@
-import { IconMapSearch, IconArrowBackUp } from '@tabler/icons-react';
+import {
+  IconMapSearch,
+  IconArrowBackUp,
+  IconBuildingStore,
+} from '@tabler/icons-react';
 import Link from 'next/link';
 import { tv } from 'tailwind-variants';
 
@@ -14,28 +18,24 @@ const footer = tv({
 const { base, nav, text, iconArea } = footer();
 
 type Props = {
+  shopId: string;
   lat: string;
   lng: string;
   dayOfWeek: string;
 };
 
-export const Footer: React.FC<Props> = ({ lat, lng, dayOfWeek }) => {
+export const Footer: React.FC<Props> = ({ shopId, lat, lng, dayOfWeek }) => {
   return (
     <footer className={base()}>
       <nav className={nav()}>
-        {/* <button className={iconArea()}>
-          <IconStar size={24} />
-          <p className={text()}>お気に入り</p>
-        </button> */}
-
         <Link href={`/${dayOfWeek}`} className={iconArea()}>
           <IconArrowBackUp size={24} />
           <p className={text()}>戻る</p>
         </Link>
-        {/* <button className={iconArea()}>
-          <IconShare2 size={24} />
-          <p className={text()}>共有</p>
-        </button> */}
+        <Link href={`/shop/${shopId}`} className={iconArea()}>
+          <IconBuildingStore size={24} />
+          <p className={text()}>店舗詳細</p>
+        </Link>
         <Link
           href={`https://maps.google.com/maps?q=${lat},${lng}`}
           target='_blank'
