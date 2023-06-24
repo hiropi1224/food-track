@@ -9,6 +9,7 @@ export const fetchShop = async (id: string) => {
         apikey: process.env.apikey as string,
         Authorization: process.env.authorization as string,
       }),
+      next: { revalidate: 86400 },
     }
   );
 

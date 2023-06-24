@@ -4,7 +4,7 @@ import { tv } from 'tailwind-variants';
 
 const footer = tv({
   slots: {
-    base: 'fixed bottom-[0vh] w-full max-w-3xl bg-mauve-2 py-2',
+    base: 'fixed bottom-[0vh] w-full max-w-3xl bg-mauve-2 py-2 opacity-70',
     nav: 'mx-4 flex justify-around gap-6',
     text: 'text-xs',
     iconArea: 'flex flex-col items-center text-sm',

@@ -17,7 +17,7 @@ export const ShopDetail: React.FC<Props> = ({ shop, foodList }) => {
       <div className='flex items-center justify-center space-x-4'>
         <Image
           className=''
-          src={`/${shop.id}.png`}
+          src={`/shop/${shop.id}.png`}
           alt={shop.shop_name}
           height={200}
           width={320}
@@ -35,7 +35,6 @@ export const ShopDetail: React.FC<Props> = ({ shop, foodList }) => {
         <Tag type='genre' text={shop.food_tag} />
       </div>
       <div className='my-2 border-y border-mauve-4'>
-        <p>Menu</p>
         {foodList.length != 0 ? (
           foodList.map((food) => (
             <FoodMenu

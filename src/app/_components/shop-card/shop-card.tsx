@@ -20,7 +20,7 @@ export const ShopCard: React.FC<Props> = ({ shop }) => {
       </div>
       <div className='my-2 flex items-center justify-center space-x-4'>
         <Image
-          src={`/${shop.id}.png`}
+          src={`/shop/${shop.id}.png`}
           alt={shop.shop_name}
           height={200}
           width={320}
