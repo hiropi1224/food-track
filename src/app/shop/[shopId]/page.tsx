@@ -38,7 +38,7 @@ export default async function ShopDetail({
         </div>
         <div className='flex flex-col gap-2 border-b border-mauve-7 p-3'>
           <div className='font-bold'>営業日</div>
-          <div>{shop.business_day}</div>
+          <div>{convertDayOfWeekCodeToString(shop.business_day)}</div>
         </div>
         {detail && (
           <>
