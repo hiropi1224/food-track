@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { FoodMenu } from '@/app/_components/food-menu';
 import { SkeletonMenu } from '@/app/_components/food-menu/food-menu';
@@ -15,13 +16,15 @@ export const ShopDetail: React.FC<Props> = ({ shop, foodList }) => {
   return (
     <div className='w-full py-2'>
       <div className='flex items-center justify-center space-x-4'>
-        <Image
-          src={`/shop/${shop.id}.png`}
-          alt={shop.shop_name}
-          height={320}
-          width={320}
-          className='aspect-square'
-        />
+        <Link key={shop.id} href={`/photos/${shop.id}`}>
+          <Image
+            src={`/shop/${shop.id}.png`}
+            alt={shop.shop_name}
+            height={320}
+            width={320}
+            className='aspect-square'
+          />
+        </Link>
       </div>
       <div className='my-2'>
         {shop.is_cashless ? (

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 'use client';
+import { IconX } from '@tabler/icons-react';
 import { useRouter } from 'next/navigation';
 import { useCallback, useRef, useEffect } from 'react';
 
@@ -63,7 +64,15 @@ export const Modal: React.FC<Props & React.PropsWithChildren> = ({
           ref={wrapper}
           className='absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 p-6 sm:w-10/12 md:w-8/12 lg:w-1/2'
         >
-          {children}
+          <div className='relative'>
+            <button
+              onClick={onDismiss}
+              className='absolute right-5 top-5 h-8 w-8'
+            >
+              <IconX className='h-8 w-8' />
+            </button>
+            {children}
+          </div>
         </div>
       </div>
     )
