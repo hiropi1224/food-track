@@ -10,7 +10,7 @@ export const fetchDetail = async (id: string) => {
         Authorization: process.env.authorization as string,
       }),
       next: { revalidate: 86400 },
-    }
+    },
   );
 
   const detail: Detail[] = await res.json();
