@@ -27,7 +27,7 @@ export async function generateStaticParams() {
         Authorization: process.env.authorization as string,
       }),
       next: { revalidate: 86400 },
-    },
+    }
   );
 
   const dayOfWeeks: { business_day: string }[] = await res.json();

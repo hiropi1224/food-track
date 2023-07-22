@@ -71,7 +71,7 @@ export interface Database {
             columns: ['shop_id'];
             referencedRelation: 'shop';
             referencedColumns: ['id'];
-          },
+          }
         ];
       };
       food: {
@@ -108,7 +108,7 @@ export interface Database {
             columns: ['shop_id'];
             referencedRelation: 'shop';
             referencedColumns: ['id'];
-          },
+          }
         ];
       };
       shop: {
@@ -212,7 +212,7 @@ export interface Database {
             columns: ['owner'];
             referencedRelation: 'users';
             referencedColumns: ['id'];
-          },
+          }
         ];
       };
       migrations: {
@@ -285,7 +285,7 @@ export interface Database {
             columns: ['owner'];
             referencedRelation: 'users';
             referencedColumns: ['id'];
-          },
+          }
         ];
       };
     };
