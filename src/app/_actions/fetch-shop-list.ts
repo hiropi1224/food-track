@@ -10,7 +10,7 @@ export const fetchShopListForDayOfWeek = async (dayOfWeek: string) => {
         Authorization: process.env.authorization as string,
       }),
       next: { revalidate: 86400 },
-    },
+    }
   );
 
   const shopList: Shop[] = await res.json();
