@@ -32,7 +32,7 @@ export const Modal: React.FC<Props & React.PropsWithChildren> = ({
         }
       }
     },
-    [onDismiss, overlay, wrapper, setIsOpen]
+    [onDismiss, overlay, wrapper, setIsOpen],
   );
 
   const onKeyDown = useCallback(
@@ -42,7 +42,7 @@ export const Modal: React.FC<Props & React.PropsWithChildren> = ({
         onDismiss();
       }
     },
-    [onDismiss, setIsOpen]
+    [onDismiss, setIsOpen],
   );
 
   useEffect(() => {

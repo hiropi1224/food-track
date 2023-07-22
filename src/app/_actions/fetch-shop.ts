@@ -10,7 +10,7 @@ export const fetchShop = async (id: string) => {
         Authorization: process.env.authorization as string,
       }),
       next: { revalidate: 86400 },
-    }
+    },
   );
 
   const shop: Shop[] = await res.json();
