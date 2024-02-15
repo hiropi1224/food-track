@@ -1,11 +1,10 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.addMissingImports": true,
-    "source.fixAll.eslint": true
+    "source.addMissingImports": "always",
+    "source.fixAll.eslint": "always"
   },
   "editor.formatOnSave": true,
-  "eslint.packageManager": "yarn",
   "editor.quickSuggestions": { "strings": true },
   "eslint.workingDirectories": [{ "mode": "auto" }],
   "files.encoding": "utf8",
