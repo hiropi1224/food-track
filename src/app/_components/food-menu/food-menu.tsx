@@ -11,7 +11,7 @@ export const FoodMenu: React.FC<Props> = ({ foodName, price, id }) => {
 
   return (
     <div className='flex gap-2 border-b border-mauve-7 py-2'>
-      <div className='flex h-40 w-40 items-center justify-center'>
+      <div className='flex size-40 items-center justify-center'>
         <Image
           src={fallbackImagePath}
           alt={id}
@@ -31,7 +31,7 @@ export const FoodMenu: React.FC<Props> = ({ foodName, price, id }) => {
 export const SkeletonMenu: React.FC = () => {
   return (
     <div className='flex gap-2 border-b border-mauve-7 py-2'>
-      <div className='h-40 w-40 bg-mauve-2' />
+      <div className='size-40 bg-mauve-2' />
       <div className='px-2 py-4'>
         <p className='text-lg font-bold'>Coming soon</p>
         <p>メニュー情報がありません。</p>

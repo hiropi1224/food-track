@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 'use client';
 import { IconX } from '@tabler/icons-react';
@@ -32,7 +33,7 @@ export const Modal: React.FC<Props & React.PropsWithChildren> = ({
         }
       }
     },
-    [onDismiss, overlay, wrapper, setIsOpen]
+    [onDismiss, overlay, wrapper, setIsOpen],
   );
 
   const onKeyDown = useCallback(
@@ -42,7 +43,7 @@ export const Modal: React.FC<Props & React.PropsWithChildren> = ({
         onDismiss();
       }
     },
-    [onDismiss, setIsOpen]
+    [onDismiss, setIsOpen],
   );
 
   useEffect(() => {
@@ -67,9 +68,9 @@ export const Modal: React.FC<Props & React.PropsWithChildren> = ({
           <div className='relative'>
             <button
               onClick={onDismiss}
-              className='absolute right-5 top-5 h-8 w-8'
+              className='absolute right-5 top-5 size-8'
             >
-              <IconX className='h-8 w-8' />
+              <IconX className='size-8' />
             </button>
             {children}
           </div>

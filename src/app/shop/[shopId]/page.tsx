@@ -11,8 +11,8 @@ import { convertDayOfWeekCodeToString } from '@/app/_utils';
 const shopDetail = tv({
   slots: {
     wrap: 'm-auto max-w-xl',
-    link: 'absolute left-5 top-5 h-8 w-8 rounded-full bg-mauve-1 opacity-90',
-    icon: 'h-8 w-8',
+    link: 'absolute left-5 top-5 size-8 rounded-full bg-mauve-1 opacity-90',
+    icon: 'size-8',
     shopName: 'p-3 text-xl font-bold',
     title: 'flex flex-col gap-2 border-b border-mauve-7 p-3',
     content: 'font-bold',
